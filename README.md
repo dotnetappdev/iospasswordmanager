@@ -1,6 +1,6 @@
 # iOS Password Manager
 
-A secure, feature-rich password manager built with SwiftUI for iOS and iPadOS. This app provides end-to-end encryption, biometric authentication, and seamless synchronization with web APIs.
+A secure, feature-rich password manager built with SwiftUI for iOS and iPadOS. This app provides end-to-end encryption, biometric authentication, seamless synchronization with web APIs, and comprehensive accessibility support following WCAG 2.1 AA guidelines.
 
 ## Features
 
@@ -18,6 +18,18 @@ A secure, feature-rich password manager built with SwiftUI for iOS and iPadOS. T
 - **Search Functionality**: Quickly find passwords across all fields
 - **Categories**: Organize passwords with customizable categories
 - **Favorites**: Mark frequently used passwords as favorites
+
+### ♿ Accessibility (WCAG 2.1 AA Compliant)
+- **VoiceOver Support**: Complete screen reader compatibility with descriptive labels
+- **Dynamic Type**: Full support for iOS system font size settings (including accessibility sizes)
+- **High Contrast**: Adaptive colors for high contrast mode
+- **Reduced Motion**: Respects iOS reduce motion preferences
+- **Keyboard Navigation**: Full keyboard and assistive technology support
+- **Semantic Structure**: Proper heading hierarchy and content grouping
+- **Audio Feedback**: VoiceOver announcements for user actions and state changes
+- **Minimum Tap Targets**: All interactive elements meet 44pt minimum size requirement
+- **Focus Management**: Logical focus order and clear visual indicators
+- **Error Handling**: Accessible error messages and recovery guidance
 
 ### 🔧 Password Management
 - **Password Generator**: Create strong, customizable passwords
@@ -276,6 +288,55 @@ open PasswordManagerApp.xcodeproj
 3. API communications use HTTPS only
 4. Sensitive data uses iOS Keychain
 5. App implements certificate pinning (recommended)
+
+## Accessibility Testing
+
+### VoiceOver Testing
+The app has been thoroughly tested with VoiceOver to ensure screen reader compatibility:
+
+1. **Enable VoiceOver**: Settings > Accessibility > VoiceOver
+2. **Test Navigation**: 
+   - All UI elements are properly labeled
+   - Logical reading order is maintained
+   - Interactive elements have appropriate traits
+   - Screen changes are announced
+3. **Test Functionality**:
+   - Login with master password and biometrics
+   - Browse password list with search and filtering
+   - Create, edit, and delete passwords
+   - Access all settings and configuration options
+
+### Dynamic Type Testing
+Test with various text sizes to ensure proper scaling:
+
+1. **Settings > Display & Brightness > Text Size**
+2. **Settings > Accessibility > Display & Text Size > Larger Text**
+3. Test with sizes from smallest to largest accessibility sizes
+4. Verify all text remains readable and UI layouts adapt properly
+
+### High Contrast Testing
+1. **Enable High Contrast**: Settings > Accessibility > Display & Text Size > Increase Contrast
+2. Verify all text maintains sufficient contrast ratios
+3. Test both light and dark modes with high contrast enabled
+
+### Reduced Motion Testing
+1. **Enable Reduce Motion**: Settings > Accessibility > Motion > Reduce Motion
+2. Verify animations are reduced or eliminated appropriately
+3. Ensure transitions don't rely solely on motion for information
+
+### Keyboard Navigation Testing
+1. Connect external keyboard to iPad
+2. Test tab navigation through all interface elements
+3. Verify all actions can be performed via keyboard
+4. Check focus indicators are clearly visible
+
+### Accessibility Inspector
+Use Xcode's Accessibility Inspector to validate:
+- Accessibility labels and hints
+- Element hierarchy and grouping
+- Touch target sizes (minimum 44pt)
+- Color contrast ratios
+- Missing accessibility information
 
 ## Troubleshooting
 
