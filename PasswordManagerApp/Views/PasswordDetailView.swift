@@ -4,6 +4,7 @@ struct PasswordDetailView: View {
     let password: Password
     @EnvironmentObject var passwordService: PasswordService
     @EnvironmentObject var settingsService: SettingsService
+    @EnvironmentObject var accessibilityStateManager: AccessibilityStateManager
     @Environment(\.dismiss) private var dismiss
     @State private var showingEdit = false
     @State private var showingDeleteAlert = false
@@ -31,46 +32,84 @@ struct PasswordDetailView: View {
             }
             .navigationTitle("Password Details")
             .navigationBarTitleDisplayMode(.inline)
+            .accessibilityHeading("Password Details for \(password.title)")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Done") {
+                    Button(AccessibilityConstants.Labels.done) {
                         dismiss()
                     }
+                    .accessibilityButton(
+                        AccessibilityConstants.Labels.done,
+                        hint: "Close password details"
+                    )
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Button("Edit") {
+                        Button(AccessibilityConstants.Labels.edit) {
                             showingEdit = true
                         }
+                        .accessibilityButton(
+                            AccessibilityConstants.Labels.edit,
+                            hint: "Edit this password"
+                        )
                         
                         Button("Toggle Favorite") {
                             passwordService.toggleFavorite(password)
+                            let announcement = password.isFavorite ? 
+                                AccessibilityConstants.Announcements.removedFromFavorites :
+                                AccessibilityConstants.Announcements.addedToFavorites
+                            UIAccessibility.post(notification: .announcement, argument: announcement)
                         }
+                        .accessibilityButton(
+                            password.isFavorite ? "Remove from favorites" : "Add to favorites",
+                            hint: AccessibilityConstants.Hints.tapToToggleFavorite
+                        )
                         
                         Divider()
                         
-                        Button("Delete", role: .destructive) {
+                        Button(AccessibilityConstants.Labels.delete, role: .destructive) {
                             showingDeleteAlert = true
                         }
+                        .accessibilityButton(
+                            AccessibilityConstants.Labels.delete,
+                            hint: "Delete this password permanently"
+                        )
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
+                    .accessibilityButton(
+                        AccessibilityConstants.Labels.more,
+                        hint: "Show more options for this password"
+                    )
                 }
             }
             .sheet(isPresented: $showingEdit) {
                 AddEditPasswordView(password: password)
             }
             .alert("Delete Password", isPresented: $showingDeleteAlert) {
-                Button("Cancel", role: .cancel) { }
-                Button("Delete", role: .destructive) {
+                Button(AccessibilityConstants.Labels.cancel, role: .cancel) { 
+                    UIAccessibility.post(notification: .announcement, argument: "Delete cancelled")
+                }
+                .accessibilityButton(AccessibilityConstants.Labels.cancel)
+                
+                Button(AccessibilityConstants.Labels.delete, role: .destructive) {
                     passwordService.deletePassword(password)
+                    UIAccessibility.post(notification: .announcement, 
+                                       argument: AccessibilityConstants.Announcements.passwordDeleted)
                     dismiss()
                 }
+                .accessibilityButton(AccessibilityConstants.Labels.delete + " permanently")
             } message: {
                 Text("Are you sure you want to delete this password? This action cannot be undone.")
+                    .accessibilityLabel("Confirmation: Are you sure you want to delete this password? This action cannot be undone.")
+            }
+            .onAppear {
+                UIAccessibility.post(notification: .screenChanged, 
+                                   argument: "Password details for \(password.title)")
             }
         }
+        .accessibilityElement(children: .contain)
     }
     
     private var headerSection: some View {
@@ -82,20 +121,27 @@ struct PasswordDetailView: View {
                     .frame(width: 80, height: 80)
                 
                 Image(systemName: categoryIcon)
-                    .font(.system(size: 32))
+                    .accessibleFont(size: 32)
                     .foregroundColor(categoryColor)
             }
+            .accessibilityLabel("Category icon for \(categoryName)")
+            .accessibilityHidden(true) // Icon is decorative, information provided in text
             
             VStack(spacing: 4) {
                 Text(password.title)
-                    .font(.title2)
-                    .fontWeight(.bold)
+                    .accessibleFont(.title2, weight: .bold)
                     .multilineTextAlignment(.center)
+                    .accessibilityHeading(password.title)
                 
                 if !password.website.isEmpty {
                     Link(password.website, destination: URL(string: password.website.hasPrefix("http") ? password.website : "https://\(password.website)") ?? URL(string: "https://google.com")!)
-                        .font(.subheadline)
+                        .accessibleFont(.subheadline)
                         .foregroundColor(.blue)
+                        .accessibilityButton(
+                            "Website: \(password.website)",
+                            hint: "Double tap to open website in browser"
+                        )
+                        .accessibleTapTarget()
                 }
             }
             
@@ -103,35 +149,45 @@ struct PasswordDetailView: View {
                 HStack {
                     Image(systemName: "heart.fill")
                         .foregroundColor(.red)
+                        .accessibilityHidden(true)
                     Text("Favorite")
-                        .font(.caption)
+                        .accessibleFont(.caption)
                         .foregroundColor(.red)
                 }
+                .accessibilityLabel("This password is marked as favorite")
             }
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Password header for \(password.title)" + 
+                           (password.website.isEmpty ? "" : ", website: \(password.website)") +
+                           (password.isFavorite ? ", marked as favorite" : ""))
     }
     
     private var passwordInfoSection: some View {
         VStack(spacing: 16) {
             DetailRow(
-                title: "Username",
+                title: AccessibilityConstants.PasswordManager.usernameField,
                 value: password.username,
                 icon: "person.fill",
                 copyable: true
             )
             
             DetailRow(
-                title: "Password",
+                title: AccessibilityConstants.PasswordManager.passwordField,
                 value: password.password,
                 icon: "key.fill",
                 isSecure: !showPassword,
                 copyable: true,
                 action: {
                     showPassword.toggle()
+                    let announcement = showPassword ? "Password revealed" : "Password hidden"
+                    UIAccessibility.post(notification: .announcement, argument: announcement)
                 },
                 actionIcon: showPassword ? "eye.slash" : "eye"
             )
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Credentials section")
     }
     
     private var additionalInfoSection: some View {
@@ -139,7 +195,7 @@ struct PasswordDetailView: View {
             if let categoryId = password.categoryId,
                let category = passwordService.categories.first(where: { $0.id == categoryId }) {
                 DetailRow(
-                    title: "Category",
+                    title: AccessibilityConstants.PasswordManager.categoryField,
                     value: category.name,
                     icon: category.icon,
                     iconColor: Color(category.color)
@@ -148,7 +204,7 @@ struct PasswordDetailView: View {
             
             if !password.notes.isEmpty {
                 DetailRow(
-                    title: "Notes",
+                    title: AccessibilityConstants.PasswordManager.notesField,
                     value: password.notes,
                     icon: "note.text",
                     multiline: true
@@ -167,24 +223,30 @@ struct PasswordDetailView: View {
                 icon: "clock"
             )
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Additional information section")
     }
     
     private var actionsSection: some View {
         VStack(spacing: 12) {
             HStack(spacing: 16) {
                 ActionButton(
-                    title: "Copy Username",
+                    title: AccessibilityConstants.PasswordManager.copyUsername,
                     icon: "person.crop.circle",
                     action: {
                         copyToClipboard(password.username)
+                        UIAccessibility.post(notification: .announcement, 
+                                           argument: AccessibilityConstants.Announcements.usernameCopied)
                     }
                 )
                 
                 ActionButton(
-                    title: "Copy Password",
+                    title: AccessibilityConstants.PasswordManager.copyPassword,
                     icon: "doc.on.doc",
                     action: {
                         copyToClipboard(password.password)
+                        UIAccessibility.post(notification: .announcement, 
+                                           argument: AccessibilityConstants.Announcements.passwordCopied)
                     }
                 )
             }
@@ -195,11 +257,23 @@ struct PasswordDetailView: View {
                     icon: "safari",
                     action: {
                         openWebsite()
+                        UIAccessibility.post(notification: .announcement, 
+                                           argument: "Opening \(password.website) in browser")
                     },
                     fullWidth: true
                 )
             }
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Quick actions section")
+    }
+    
+    private var categoryName: String {
+        if let categoryId = password.categoryId,
+           let category = passwordService.categories.first(where: { $0.id == categoryId }) {
+            return category.name
+        }
+        return "No Category"
     }
     
     private var categoryIcon: String {
@@ -262,23 +336,29 @@ struct DetailRow: View {
         HStack(alignment: multiline ? .top : .center, spacing: 16) {
             Image(systemName: icon)
                 .foregroundColor(iconColor)
-                .font(.title3)
+                .accessibleFont(.title3)
                 .frame(width: 24)
+                .accessibilityHidden(true) // Icon is decorative
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.caption)
+                    .accessibleFont(.caption)
                     .foregroundColor(.secondary)
+                    .accessibilityLabel("\(title) field")
                 
                 if multiline {
                     Text(isSecure ? String(repeating: "•", count: value.count) : value)
-                        .font(.body)
+                        .accessibleFont(.body)
                         .textSelection(.enabled)
+                        .accessibilityLabel(isSecure ? "\(title): hidden" : "\(title): \(value)")
+                        .accessibilityValue(isSecure ? "Tap show button to reveal" : value)
                 } else {
                     Text(isSecure ? String(repeating: "•", count: value.count) : value)
-                        .font(.system(.body, design: title == "Password" ? .monospaced : .default))
+                        .accessibleFont(.body, design: title == "Password" ? .monospaced : .default)
                         .textSelection(.enabled)
                         .lineLimit(1)
+                        .accessibilityLabel(isSecure ? "\(title): hidden" : "\(title): \(value)")
+                        .accessibilityValue(isSecure ? "Tap show button to reveal" : value)
                 }
             }
             
@@ -288,10 +368,17 @@ struct DetailRow: View {
                 if copyable {
                     Button(action: {
                         UIPasteboard.general.string = value
+                        UIAccessibility.post(notification: .announcement, 
+                                           argument: "\(title) copied to clipboard")
                     }) {
                         Image(systemName: "doc.on.doc")
                             .foregroundColor(.blue)
                     }
+                    .accessibilityButton(
+                        "Copy \(title.lowercased())",
+                        hint: AccessibilityConstants.Hints.tapToCopy
+                    )
+                    .accessibleTapTarget()
                 }
                 
                 if let action = action, let actionIcon = actionIcon {
@@ -299,12 +386,18 @@ struct DetailRow: View {
                         Image(systemName: actionIcon)
                             .foregroundColor(.blue)
                     }
+                    .accessibilityButton(
+                        isSecure ? AccessibilityConstants.PasswordManager.showPassword : AccessibilityConstants.PasswordManager.hidePassword,
+                        hint: isSecure ? AccessibilityConstants.Hints.tapToReveal : "Double tap to hide password"
+                    )
+                    .accessibleTapTarget()
                 }
             }
         }
         .padding()
         .background(Color.gray.opacity(0.1))
         .cornerRadius(12)
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -318,8 +411,10 @@ struct ActionButton: View {
         Button(action: action) {
             HStack {
                 Image(systemName: icon)
+                    .accessibilityHidden(true)
                 Text(title)
                     .fontWeight(.medium)
+                    .accessibleFont(.body, weight: .medium)
             }
             .frame(maxWidth: fullWidth ? .infinity : nil)
             .padding()
@@ -327,6 +422,11 @@ struct ActionButton: View {
             .foregroundColor(.blue)
             .cornerRadius(12)
         }
+        .accessibilityButton(
+            title,
+            hint: "Double tap to \(title.lowercased())"
+        )
+        .accessibleTapTarget()
     }
 }
 
@@ -343,4 +443,5 @@ struct ActionButton: View {
     return PasswordDetailView(password: samplePassword)
         .environmentObject(PasswordService())
         .environmentObject(SettingsService())
+        .environmentObject(AccessibilityStateManager())
 }
