@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1111111111111111111111111 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2222222222222222222222222 /* App.swift */; };
+		A3333333333333333333333333 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4444444444444444444444444 /* ContentView.swift */; };
+		A5555555555555555555555555 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6666666666666666666666666 /* LoginView.swift */; };
+		A7777777777777777777777777 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8888888888888888888888888 /* QRScannerView.swift */; };
+		A9999999999999999999999999 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAAAAAAA /* PasswordManager.swift */; };
+		ABBBBBBBBBBBBBBBBBBBBBBBB /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCCCCCCCCCCCCCCCCCCCCC /* BiometricAuth.swift */; };
+		ADDDDDDDDDDDDDDDDDDDDDDDD /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEEEEEEEEEEEEEEEEEEEEE /* KeychainService.swift */; };
+		AFFFFFFFFFFFFFFFFFFFFFFFFFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAAAAAAAAAAAAAAAAAAAAA /* Assets.xcassets */; };
+		BBBBBBBBBBBBBBBBBBBBBBBBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCCCCCCCCCCCCCCCCCCCCC /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B1111111111111111111111111 /* iOSPasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2222222222222222222222222 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		A4444444444444444444444444 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A6666666666666666666666666 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A8888888888888888888888888 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAAAAAAA /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
+		ACCCCCCCCCCCCCCCCCCCCCCCC /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
+		AEEEEEEEEEEEEEEEEEEEEEEE /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		BAAAAAAAAAAAAAAAAAAAAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCCCCCCCCCCCCCCCCCCCCCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDDDDDDDDDDDDDDDDDDDDDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2222222222222222222222222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3333333333333333333333333 = {
+			isa = PBXGroup;
+			children = (
+				B4444444444444444444444444 /* iOSPasswordManager */,
+				B5555555555555555555555555 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4444444444444444444444444 /* iOSPasswordManager */ = {
+			isa = PBXGroup;
+			children = (
+				A2222222222222222222222222 /* App.swift */,
+				B6666666666666666666666666 /* Views */,
+				B7777777777777777777777777 /* Services */,
+				B8888888888888888888888888 /* Models */,
+				BAAAAAAAAAAAAAAAAAAAAAA /* Assets.xcassets */,
+				BDDDDDDDDDDDDDDDDDDDDDD /* Info.plist */,
+				B9999999999999999999999999 /* Preview Content */,
+			);
+			path = iOSPasswordManager;
+			sourceTree = "<group>";
+		};
+		B5555555555555555555555555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1111111111111111111111111 /* iOSPasswordManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6666666666666666666666666 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4444444444444444444444444 /* ContentView.swift */,
+				A6666666666666666666666666 /* LoginView.swift */,
+				A8888888888888888888888888 /* QRScannerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B7777777777777777777777777 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEEEEEEEEEEEEEEEEEEEEE /* KeychainService.swift */,
+				ACCCCCCCCCCCCCCCCCCCCCCCC /* BiometricAuth.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B8888888888888888888888888 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAAAAAAA /* PasswordManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9999999999999999999999999 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BCCCCCCCCCCCCCCCCCCCCCC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAAAAAAAAAAAAAAAAAAAAAAAA /* iOSPasswordManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEEEEEEEEEEEEEEEEEEEEEEE /* Build configuration list for PBXNativeTarget "iOSPasswordManager" */;
+			buildPhases = (
+				BBBBBBBBBBBBBBBBBBBBBBBBB /* Sources */,
+				B2222222222222222222222222 /* Frameworks */,
+				BCCCCCCCCCCCCCCCCCCCCCCCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSPasswordManager;
+			productName = iOSPasswordManager;
+			productReference = B1111111111111111111111111 /* iOSPasswordManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDDDDDDDDDDDDDDDDDDDDDDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BAAAAAAAAAAAAAAAAAAAAAAAA = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = BFFFFFFFFFFFFFFFFFFFFFFFFFF /* Build configuration list for PBXProject "iOSPasswordManager" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3333333333333333333333333;
+			productRefGroup = B5555555555555555555555555 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAAAAAAAAAAAAAAAAAAAAAAAA /* iOSPasswordManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCCCCCCCCCCCCCCCCCCCCCCCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBBBBBBBBBBBBBBBBBBBBBBBB /* Preview Assets.xcassets in Resources */,
+				AFFFFFFFFFFFFFFFFFFFFFFFFFF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBBBBBBBBBBBBBBBBBBBBBBBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3333333333333333333333333 /* ContentView.swift in Sources */,
+				A5555555555555555555555555 /* LoginView.swift in Sources */,
+				A7777777777777777777777777 /* QRScannerView.swift in Sources */,
+				A9999999999999999999999999 /* PasswordManager.swift in Sources */,
+				ABBBBBBBBBBBBBBBBBBBBBBBB /* BiometricAuth.swift in Sources */,
+				ADDDDDDDDDDDDDDDDDDDDDDDD /* KeychainService.swift in Sources */,
+				A1111111111111111111111111 /* App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BFFFFFFFFFFFFFFFFFFFFFFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CAAAAAAAAAAAAAAAAAAAAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBBBBBBBBBBBBBBBBBBBBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iOSPasswordManager/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSPasswordManager/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to scan QR codes for authentication";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This app uses Face ID for secure authentication";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.passwordmanager.iOSPasswordManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCCCCCCCCCCCCCCCCCCCCCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iOSPasswordManager/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSPasswordManager/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to scan QR codes for authentication";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This app uses Face ID for secure authentication";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.passwordmanager.iOSPasswordManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFFFFFFFFFFFFFFFFFFFFFFFFFF /* Build configuration list for PBXProject "iOSPasswordManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFFFFFFFFFFFFFFFFFFFFFFF /* Debug */,
+				CAAAAAAAAAAAAAAAAAAAAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEEEEEEEEEEEEEEEEEEEEEEE /* Build configuration list for PBXNativeTarget "iOSPasswordManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBBBBBBBBBBBBBBBBBBBBBB /* Debug */,
+				CCCCCCCCCCCCCCCCCCCCCCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDDDDDDDDDDDDDDDDDDDDDDD /* Project object */;
+}
