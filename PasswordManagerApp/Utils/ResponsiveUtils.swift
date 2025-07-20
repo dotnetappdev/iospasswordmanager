@@ -140,6 +140,58 @@ extension View {
     func dynamicTypeSize(min: DynamicTypeSize = .small, max: DynamicTypeSize = .accessibility3) -> some View {
         self.dynamicTypeSize(min...max)
     }
+    
+    /// Enhanced font scaling that respects accessibility settings
+    func accessibleFont(_ textStyle: Font.TextStyle, design: Font.Design = .default, weight: Font.Weight = .regular) -> some View {
+        self.font(.system(textStyle, design: design, weight: weight))
+            .dynamicTypeSize(.small...DynamicTypeSize.accessibility5)
+    }
+    
+    /// Custom font size that scales with accessibility settings
+    func accessibleFont(size: CGFloat, weight: Font.Weight = .regular, design: Font.Design = .default, maxScale: CGFloat = 3.0) -> some View {
+        self.modifier(AccessibleFontModifier(size: size, weight: weight, design: design, maxScale: maxScale))
+    }
+    
+    /// Minimum font size that ensures readability
+    func minimumScaleFactor(_ factor: CGFloat = 0.7) -> some View {
+        self.minimumScaleFactor(factor)
+    }
+}
+
+// MARK: - Accessible Font Modifier
+struct AccessibleFontModifier: ViewModifier {
+    let size: CGFloat
+    let weight: Font.Weight
+    let design: Font.Design
+    let maxScale: CGFloat
+    
+    @Environment(\.sizeCategory) var sizeCategory
+    
+    func body(content: Content) -> some View {
+        let scaleFactor = fontScaleFactor(for: sizeCategory)
+        let scaledSize = min(size * scaleFactor, size * maxScale)
+        
+        return content
+            .font(.system(size: scaledSize, weight: weight, design: design))
+    }
+    
+    private func fontScaleFactor(for sizeCategory: ContentSizeCategory) -> CGFloat {
+        switch sizeCategory {
+        case .extraSmall: return 0.8
+        case .small: return 0.9
+        case .medium: return 1.0
+        case .large: return 1.1
+        case .extraLarge: return 1.2
+        case .extraExtraLarge: return 1.3
+        case .extraExtraExtraLarge: return 1.4
+        case .accessibilityMedium: return 1.6
+        case .accessibilityLarge: return 1.8
+        case .accessibilityExtraLarge: return 2.0
+        case .accessibilityExtraExtraLarge: return 2.2
+        case .accessibilityExtraExtraExtraLarge: return 2.4
+        default: return 1.0
+        }
+    }
 }
 
 // MARK: - Color Extensions for Dark Mode

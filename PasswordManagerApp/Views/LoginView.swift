@@ -3,6 +3,7 @@ import LocalAuthentication
 
 struct LoginView: View {
     @EnvironmentObject var authService: AuthenticationService
+    @EnvironmentObject var accessibilityStateManager: AccessibilityStateManager
     @State private var masterPassword = ""
     @State private var showingRegistration = false
     @State private var isLoading = false
@@ -19,6 +20,7 @@ struct LoginView: View {
                     endPoint: .bottomTrailing
                 )
                 .ignoresSafeArea()
+                .accessibilityHidden(true)
                 
                 VStack(spacing: 30) {
                     Spacer()
@@ -26,18 +28,21 @@ struct LoginView: View {
                     // App Logo and Title
                     VStack(spacing: 16) {
                         Image(systemName: "lock.shield.fill")
-                            .font(.system(size: 80))
+                            .accessibleFont(size: 80)
                             .foregroundColor(.white)
+                            .accessibilityLabel("Password Manager app icon")
                         
                         Text("Password Manager")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                            .accessibleFont(.largeTitle, weight: .bold)
                             .foregroundColor(.white)
+                            .accessibilityHeading("Password Manager")
                         
                         Text("Secure your digital life")
-                            .font(.subheadline)
+                            .accessibleFont(.subheadline)
                             .foregroundColor(.white.opacity(0.9))
+                            .accessibilityLabel("App tagline: Secure your digital life")
                     }
+                    .accessibilityGroup()
                     
                     Spacer()
                     
@@ -58,22 +63,44 @@ struct LoginView: View {
                         showingRegistration.toggle()
                         masterPassword = ""
                         errorMessage = ""
+                        
+                        // Announce the form change
+                        let announcement = showingRegistration ? 
+                            AccessibilityConstants.Announcements.loginSuccessful : 
+                            "Switched to sign in form"
+                        UIAccessibility.post(notification: .screenChanged, argument: announcement)
                     }) {
                         Text(showingRegistration ? "Already have an account? Sign In" : "New user? Create Account")
                             .foregroundColor(.white)
                             .underline()
+                            .accessibleFont(.body)
                     }
+                    .accessibilityButton(
+                        showingRegistration ? "Switch to sign in" : "Switch to create account",
+                        hint: "Double tap to toggle between sign in and registration forms"
+                    )
+                    .accessibleTapTarget()
                     .padding(.bottom, 50)
                 }
             }
         }
         .alert("Error", isPresented: $showError) {
-            Button("OK") { }
+            Button("OK") { 
+                UIAccessibility.post(notification: .announcement, argument: "Error dismissed")
+            }
+            .accessibilityButton(AccessibilityConstants.Labels.close)
         } message: {
             Text(errorMessage)
+                .accessibilityLabel("Error message: \(errorMessage)")
         }
         .onAppear {
             attemptBiometricLogin()
+            UIAccessibility.post(notification: .screenChanged, argument: showingRegistration ? "Registration form" : "Sign in form")
+        }
+        .onChange(of: showError) { newValue in
+            if newValue {
+                UIAccessibility.post(notification: .announcement, argument: "Error: \(errorMessage)")
+            }
         }
     }
     
@@ -82,6 +109,11 @@ struct LoginView: View {
             // Master Password Field
             SecureField("Master Password", text: $masterPassword)
                 .textFieldStyle(CustomTextFieldStyle())
+                .accessibilityTextField(
+                    AccessibilityConstants.PasswordManager.passwordField,
+                    hint: AccessibilityConstants.Hints.masterPasswordHint
+                )
+                .accessibilityId("masterPasswordField")
                 .onSubmit {
                     signIn()
                 }
@@ -93,6 +125,7 @@ struct LoginView: View {
                         ProgressView()
                             .scaleEffect(0.8)
                             .foregroundColor(.white)
+                            .accessibilityHidden(true)
                     } else {
                         Text("Sign In")
                             .fontWeight(.semibold)
@@ -105,12 +138,19 @@ struct LoginView: View {
                 .cornerRadius(12)
             }
             .disabled(masterPassword.isEmpty || isLoading)
+            .accessibilityButton(
+                isLoading ? "Signing in, please wait" : "Sign In",
+                hint: masterPassword.isEmpty ? "Enter your master password first" : "Double tap to sign in to your account"
+            )
+            .accessibilityId("signInButton")
+            .accessibleTapTarget()
             
             // Biometric Authentication Button
             if authService.biometricType != .none && authService.isBiometricEnabled {
                 Button(action: signInWithBiometrics) {
                     HStack {
                         Image(systemName: biometricIcon)
+                            .accessibilityHidden(true)
                         Text("Use \(biometricText)")
                     }
                     .frame(maxWidth: .infinity)
@@ -119,8 +159,16 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .cornerRadius(12)
                 }
+                .accessibilityButton(
+                    "Use \(biometricText)",
+                    hint: AccessibilityConstants.Hints.biometricAuthHint
+                )
+                .accessibilityId("biometricButton")
+                .accessibleTapTarget()
             }
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Sign in form")
     }
     
     @State private var email = ""
@@ -133,14 +181,29 @@ struct LoginView: View {
                 .textFieldStyle(CustomTextFieldStyle())
                 .autocapitalization(.none)
                 .keyboardType(.emailAddress)
+                .accessibilityTextField(
+                    AccessibilityConstants.PasswordManager.emailField,
+                    hint: "Enter your email address for your new account"
+                )
+                .accessibilityId("emailField")
             
             // Master Password Field
             SecureField("Master Password", text: $masterPassword)
                 .textFieldStyle(CustomTextFieldStyle())
+                .accessibilityTextField(
+                    AccessibilityConstants.PasswordManager.passwordField,
+                    hint: "Create a strong master password. Must be at least 8 characters."
+                )
+                .accessibilityId("newPasswordField")
             
             // Confirm Password Field
             SecureField("Confirm Password", text: $confirmPassword)
                 .textFieldStyle(CustomTextFieldStyle())
+                .accessibilityTextField(
+                    "Confirm password",
+                    hint: "Re-enter your master password to confirm"
+                )
+                .accessibilityId("confirmPasswordField")
             
             // Password Strength Indicator
             if !masterPassword.isEmpty {
@@ -154,6 +217,7 @@ struct LoginView: View {
                         ProgressView()
                             .scaleEffect(0.8)
                             .foregroundColor(.white)
+                            .accessibilityHidden(true)
                     } else {
                         Text("Create Account")
                             .fontWeight(.semibold)
@@ -166,7 +230,15 @@ struct LoginView: View {
                 .cornerRadius(12)
             }
             .disabled(!isValidRegistration || isLoading)
+            .accessibilityButton(
+                isLoading ? "Creating account, please wait" : "Create Account",
+                hint: !isValidRegistration ? "Complete all fields with valid information first" : "Double tap to create your new account"
+            )
+            .accessibilityId("createAccountButton")
+            .accessibleTapTarget()
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Create account form")
     }
     
     private var biometricIcon: String {
@@ -202,6 +274,7 @@ struct LoginView: View {
         guard !masterPassword.isEmpty else { return }
         
         isLoading = true
+        UIAccessibility.post(notification: .announcement, argument: "Signing in")
         
         Task {
             let success = await authService.authenticateWithMasterPassword(masterPassword)
@@ -212,12 +285,17 @@ struct LoginView: View {
                     errorMessage = "Invalid master password"
                     showError = true
                     masterPassword = ""
+                    UIAccessibility.post(notification: .announcement, argument: AccessibilityConstants.Announcements.loginFailed)
+                } else {
+                    UIAccessibility.post(notification: .announcement, argument: AccessibilityConstants.Announcements.loginSuccessful)
                 }
             }
         }
     }
     
     private func signInWithBiometrics() {
+        UIAccessibility.post(notification: .announcement, argument: "Authenticating with \(biometricText)")
+        
         Task {
             let success = await authService.authenticateWithBiometrics()
             
@@ -225,6 +303,11 @@ struct LoginView: View {
                 await MainActor.run {
                     errorMessage = "Biometric authentication failed"
                     showError = true
+                    UIAccessibility.post(notification: .announcement, argument: AccessibilityConstants.Announcements.loginFailed)
+                }
+            } else {
+                await MainActor.run {
+                    UIAccessibility.post(notification: .announcement, argument: AccessibilityConstants.Announcements.loginSuccessful)
                 }
             }
         }
@@ -234,6 +317,7 @@ struct LoginView: View {
         guard isValidRegistration else { return }
         
         isLoading = true
+        UIAccessibility.post(notification: .announcement, argument: "Creating account")
         
         Task {
             let success = await authService.registerUser(email: email, masterPassword: masterPassword)
@@ -243,11 +327,13 @@ struct LoginView: View {
                 if !success {
                     errorMessage = "Failed to create account. User may already exist."
                     showError = true
+                    UIAccessibility.post(notification: .announcement, argument: AccessibilityConstants.Announcements.errorOccurred)
                 } else {
                     // Account created successfully, user is now logged in
                     masterPassword = ""
                     email = ""
                     confirmPassword = ""
+                    UIAccessibility.post(notification: .announcement, argument: "Account created successfully")
                 }
             }
         }
@@ -267,7 +353,8 @@ struct CustomTextFieldStyle: TextFieldStyle {
             .background(Color.white.opacity(0.2))
             .cornerRadius(12)
             .foregroundColor(.white)
-            .font(.body)
+            .accessibleFont(.body)
+            .accessibleTapTarget(minSize: 44)
     }
 }
 
@@ -282,17 +369,20 @@ struct PasswordStrengthView: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Text("Password Strength:")
-                    .font(.caption)
+                    .accessibleFont(.caption)
                     .foregroundColor(.white.opacity(0.8))
                 
                 Text(strength.level.description)
-                    .font(.caption)
-                    .fontWeight(.semibold)
+                    .accessibleFont(.caption, weight: .semibold)
                     .foregroundColor(colorForStrength(strength.level))
             }
+            .accessibilityGroup()
+            .accessibilityLabel("Password strength: \(strength.level.description)")
+            .accessibilityValue("\(Int((Double(strength.score) / 7.0) * 100)) percent")
             
             ProgressView(value: Double(strength.score), total: 7.0)
                 .progressViewStyle(LinearProgressViewStyle(tint: colorForStrength(strength.level)))
+                .accessibilityHidden(true) // Already described in the text above
         }
         .padding(.horizontal)
     }
@@ -314,4 +404,5 @@ struct PasswordStrengthView: View {
 #Preview {
     LoginView()
         .environmentObject(AuthenticationService())
+        .environmentObject(AccessibilityStateManager())
 }
