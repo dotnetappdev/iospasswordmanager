@@ -1,0 +1,27 @@
+# Build artifacts
+.build/
+*.xcarchive
+*.xcbuild
+
+# Xcode
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.swiftpm/
+
+# SQLite databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# macOS
+.DS_Store
+
+# Test databases
+.PasswordManager/

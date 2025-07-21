@@ -1,0 +1,755 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.xctest",
+      "packagePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager",
+      "productName" : "iOSPasswordManagerPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+    "iOSPasswordManagerPackageDiscoveredTests"
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.iOSPasswordManager-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/usr/share/swift/usr/bin/swiftc",
+      "fileList" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/sources",
+      "importPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/App.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Models/PasswordManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/DatabaseService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/KeychainService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Views/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "iOSPasswordManager",
+      "moduleOutputPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManager.swiftmodule",
+      "objects" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App.swift.o",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager.swift.o",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService.swift.o",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService.swift.o",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "iospasswordmanager",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManager.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/App.swift",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Models/PasswordManager.swift",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/DatabaseService.swift",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/KeychainService.swift",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Views/ContentView.swift"
+      ],
+      "tempsPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.iOSPasswordManagerPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/usr/share/swift/usr/bin/swiftc",
+      "fileList" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/sources",
+      "importPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/all-discovered-tests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/iOSPasswordManagerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "iOSPasswordManagerPackageDiscoveredTests",
+      "moduleOutputPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerPackageDiscoveredTests.swiftmodule",
+      "objects" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/all-discovered-tests.swift.o",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/iOSPasswordManagerTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "iospasswordmanager",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/iOSPasswordManagerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerPackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/all-discovered-tests.swift",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/iOSPasswordManagerTests.swift"
+      ],
+      "tempsPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.iOSPasswordManagerPackageTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/usr/share/swift/usr/bin/swiftc",
+      "fileList" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/sources",
+      "importPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerPackageDiscoveredTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "iOSPasswordManagerPackageTests",
+      "moduleOutputPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerPackageTests.swiftmodule",
+      "objects" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "iospasswordmanager",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.iOSPasswordManagerTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/usr/share/swift/usr/bin/swiftc",
+      "fileList" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/sources",
+      "importPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/Tests/DatabaseServiceTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManager.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "iOSPasswordManagerTests",
+      "moduleOutputPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerTests.swiftmodule",
+      "objects" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/DatabaseServiceTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "iospasswordmanager",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/DatabaseServiceTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/runner/work/iospasswordmanager/iospasswordmanager/Tests/DatabaseServiceTests.swift"
+      ],
+      "tempsPath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "iOSPasswordManager" : [
+      "/usr/share/swift/usr/bin/swiftc",
+      "-module-name",
+      "iOSPasswordManager",
+      "-package-name",
+      "iospasswordmanager",
+      "-incremental",
+      "-c",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/App.swift",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Models/PasswordManager.swift",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/DatabaseService.swift",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/KeychainService.swift",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Views/ContentView.swift",
+      "-I",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "iospasswordmanager",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/usr/share/swift/usr/bin/swiftc"
+    ],
+    "iOSPasswordManagerPackageDiscoveredTests" : [
+      "/usr/share/swift/usr/bin/swiftc",
+      "-module-name",
+      "iOSPasswordManagerPackageDiscoveredTests",
+      "-package-name",
+      "iospasswordmanager",
+      "-incremental",
+      "-c",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/all-discovered-tests.swift",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/iOSPasswordManagerTests.swift",
+      "-I",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "iospasswordmanager",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/usr/share/swift/usr/bin/swiftc"
+    ],
+    "iOSPasswordManagerPackageTests" : [
+      "/usr/share/swift/usr/bin/swiftc",
+      "-module-name",
+      "iOSPasswordManagerPackageTests",
+      "-package-name",
+      "iospasswordmanager",
+      "-incremental",
+      "-c",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.derived/runner.swift",
+      "-I",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "iospasswordmanager",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/usr/share/swift/usr/bin/swiftc"
+    ],
+    "iOSPasswordManagerTests" : [
+      "/usr/share/swift/usr/bin/swiftc",
+      "-module-name",
+      "iOSPasswordManagerTests",
+      "-package-name",
+      "iospasswordmanager",
+      "-incremental",
+      "-c",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/Tests/DatabaseServiceTests.swift",
+      "-I",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "iospasswordmanager",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/usr/share/swift/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "iOSPasswordManager" : [
+
+    ],
+    "iOSPasswordManagerPackageDiscoveredTests" : [
+      "iOSPasswordManagerTests",
+      "iOSPasswordManager"
+    ],
+    "iOSPasswordManagerPackageTests" : [
+      "iOSPasswordManagerPackageDiscoveredTests",
+      "iOSPasswordManagerTests",
+      "iOSPasswordManager"
+    ],
+    "iOSPasswordManagerTests" : [
+      "iOSPasswordManager"
+    ]
+  },
+  "testDiscoveryCommands" : {
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/all-discovered-tests.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/DatabaseServiceTests.swift.o"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/all-discovered-tests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/iOSPasswordManagerTests.swift"
+        }
+      ]
+    }
+  },
+  "testEntryPointCommands" : {
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.derived/runner.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/Modules/iOSPasswordManagerPackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/App.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Models/PasswordManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/DatabaseService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/KeychainService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Views/ContentView.swift"
+        }
+      ],
+      "outputFilePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/sources"
+    },
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/all-discovered-tests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.derived/iOSPasswordManagerTests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/sources"
+    },
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/sources"
+    },
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/iOSPasswordManager.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/iOSPasswordManagerPackageDiscoveredTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageDiscoveredTests.build/iOSPasswordManagerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/iOSPasswordManagerPackageTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/DatabaseServiceTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/iOSPasswordManagerTests.swiftmodule.o"
+        }
+      ],
+      "outputFilePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerPackageTests.product/Objects.LinkFileList"
+    },
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/runner/work/iospasswordmanager/iospasswordmanager/Tests/DatabaseServiceTests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManagerTests.build/sources"
+    },
+    "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/usr/share/swift/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+    }
+  }
+}
