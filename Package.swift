@@ -24,11 +24,11 @@ let package = Package(
                 "App.swift",
                 "Models/PasswordManager.swift",
                 "Services/KeychainService.swift",
-                "Services/BiometricAuth.swift",
                 "Services/DatabaseService.swift",
-                "Views/ContentView.swift",
-                "Views/LoginView.swift",
-                "Views/QRScannerView.swift"
+                "Views/ContentView.swift"
+            ],
+            linkerSettings: [
+                .linkedLibrary("sqlite3")
             ]
         ),
         .testTarget(

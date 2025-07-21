@@ -25,6 +25,7 @@ class PasswordManager: ObservableObject {
     
     private var masterKey: String = ""
     private let keychainService = KeychainService.shared
+    private let databaseService = DatabaseService.shared
     
     init() {
         // Initialize with empty state
@@ -57,19 +58,28 @@ class PasswordManager: ObservableObject {
     }
     
     func addPassword(_ password: PasswordEntry) {
-        passwords.append(password)
-        savePasswords()
+        if databaseService.savePassword(password, masterKey: masterKey) {
+            passwords.append(password)
+        } else {
+            print("Failed to save password to database")
+        }
     }
     
     func deletePassword(_ password: PasswordEntry) {
-        passwords.removeAll { $0.id == password.id }
-        savePasswords()
+        if databaseService.deletePassword(id: password.id.uuidString) {
+            passwords.removeAll { $0.id == password.id }
+        } else {
+            print("Failed to delete password from database")
+        }
     }
     
     func updatePassword(_ password: PasswordEntry) {
-        if let index = passwords.firstIndex(where: { $0.id == password.id }) {
-            passwords[index] = password
-            savePasswords()
+        if databaseService.savePassword(password, masterKey: masterKey) {
+            if let index = passwords.firstIndex(where: { $0.id == password.id }) {
+                passwords[index] = password
+            }
+        } else {
+            print("Failed to update password in database")
         }
     }
     
@@ -85,36 +95,17 @@ class PasswordManager: ObservableObject {
     }
     
     private func loadPasswords() async {
-        guard let encryptedData = keychainService.getEncryptedPasswords(),
-              let decryptedData = decryptData(encryptedData, with: masterKey) else {
-            // No passwords stored yet or decryption failed
-            passwords = []
-            return
-        }
+        // First try to migrate from Keychain if this is the first run with DatabaseService
+        await migrateFromKeychainIfNeeded()
         
-        do {
-            let decoder = JSONDecoder()
-            passwords = try decoder.decode([PasswordEntry].self, from: decryptedData)
-        } catch {
-            print("Failed to decode passwords: \(error)")
-            passwords = []
-        }
+        // Load passwords from database
+        passwords = databaseService.loadAllPasswords(masterKey: masterKey)
     }
     
     private func savePasswords() {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(passwords)
-            
-            guard let encryptedData = encryptData(data, with: masterKey) else {
-                print("Failed to encrypt passwords")
-                return
-            }
-            
-            keychainService.storeEncryptedPasswords(encryptedData)
-        } catch {
-            print("Failed to encode passwords: \(error)")
-        }
+        // This method is no longer needed as passwords are saved directly to database
+        // in addPassword, updatePassword methods. Keeping for backward compatibility.
+        print("savePasswords() called - passwords are now saved directly to database")
     }
     
     private func encryptData(_ data: Data, with key: String) -> Data? {
@@ -147,6 +138,69 @@ class PasswordManager: ObservableObject {
             print("Decryption failed: \(error)")
             return nil
         }
+    }
+    
+    // MARK: - Migration Methods
+    
+    private func migrateFromKeychainIfNeeded() async {
+        // Check if we have data in Keychain but no data in database
+        guard keychainService.getEncryptedPasswords() != nil else {
+            return // No data to migrate
+        }
+        
+        let databasePasswords = databaseService.loadAllPasswords(masterKey: masterKey)
+        guard databasePasswords.isEmpty else {
+            return // Database already has data, no migration needed
+        }
+        
+        print("Migrating passwords from Keychain to Database...")
+        
+        // Load passwords from Keychain using the old method
+        guard let encryptedData = keychainService.getEncryptedPasswords(),
+              let decryptedData = decryptData(encryptedData, with: masterKey) else {
+            print("Failed to decrypt Keychain data for migration")
+            return
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            let keychainPasswords = try decoder.decode([PasswordEntry].self, from: decryptedData)
+            
+            // Save each password to the database
+            var migratedCount = 0
+            for password in keychainPasswords {
+                if databaseService.savePassword(password, masterKey: masterKey) {
+                    migratedCount += 1
+                }
+            }
+            
+            if migratedCount == keychainPasswords.count {
+                print("Successfully migrated \(migratedCount) passwords to database")
+                // Clear the old Keychain data after successful migration
+                keychainService.deleteEncryptedPasswords()
+            } else {
+                print("Migration incomplete: migrated \(migratedCount) of \(keychainPasswords.count) passwords")
+            }
+        } catch {
+            print("Failed to decode Keychain passwords for migration: \(error)")
+        }
+    }
+    
+    // MARK: - Database Management
+    
+    func getDatabaseInfo() -> [String: Any] {
+        return databaseService.getDatabaseInfo()
+    }
+    
+    func vacuumDatabase() {
+        databaseService.vacuum()
+    }
+    
+    func clearAllData() {
+        databaseService.clearAllPasswords()
+        keychainService.clearAllData()
+        passwords.removeAll()
+        logout()
     }
     
     // MARK: - Utility Functions

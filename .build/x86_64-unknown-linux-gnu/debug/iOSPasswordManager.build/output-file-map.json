@@ -1,0 +1,35 @@
+{
+  "": {
+    "swift-dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/master.swiftdeps"
+  },
+  "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/App.swift": {
+    "dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App.d",
+    "object": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App.swift.o",
+    "swiftmodule": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/App.swiftdeps"
+  },
+  "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Models/PasswordManager.swift": {
+    "dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager.d",
+    "object": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager.swift.o",
+    "swiftmodule": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/PasswordManager.swiftdeps"
+  },
+  "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/DatabaseService.swift": {
+    "dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService.d",
+    "object": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService.swift.o",
+    "swiftmodule": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/DatabaseService.swiftdeps"
+  },
+  "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Services/KeychainService.swift": {
+    "dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService.d",
+    "object": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService.swift.o",
+    "swiftmodule": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/KeychainService.swiftdeps"
+  },
+  "/home/runner/work/iospasswordmanager/iospasswordmanager/iOSPasswordManager/Views/ContentView.swift": {
+    "dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView.d",
+    "object": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView.swift.o",
+    "swiftmodule": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/iospasswordmanager/iospasswordmanager/.build/x86_64-unknown-linux-gnu/debug/iOSPasswordManager.build/ContentView.swiftdeps"
+  }
+}
